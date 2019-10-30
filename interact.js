@@ -17,10 +17,14 @@ const total = document.querySelector('.somme');
 var allCrois = Array.from(crois)                        // Convert NodeList => crois to Array => allCrois
 for (let i of allCrois) {                               // boucle pour parcourir tableau allCrois i === allCrois[i]
     i.addEventListener('click', function () {           // creation d'un event click sur btn crois === allCrois[i]                                     
-        if (i.nextElementSibling.style.color !== 'red') // if eli ba3ed el i = crois , heart coler not red
-            // ki nsase5 star lkol bel crois yn9es somme me total
+        if (i.nextElementSibling.style.color !== 'red') { // if eli ba3ed el i = crois , heart coler not red
+            // ki nfase5 star lkol bel crois yn9es somme me total
+
             total.innerHTML = parseFloat(total.innerHTML) - (i.parentElement.parentElement.querySelector('.nombre').innerHTML * parseFloat(i.parentElement.parentElement.querySelector('.prix').innerHTML)) + ' €'
-            i.parentElement.parentElement.remove()      // supprimer parentelement = row product
+
+            i.parentElement.parentElement.remove()     // supprimer parentelement = row product
+        }
+
     })
 }
 
