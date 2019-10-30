@@ -18,6 +18,8 @@ var allCrois = Array.from(crois)                        // Convert NodeList => c
 for (let i of allCrois) {                               // boucle pour parcourir tableau allCrois i === allCrois[i]
     i.addEventListener('click', function () {           // creation d'un event click sur btn crois === allCrois[i]                                     
         if (i.nextElementSibling.style.color !== 'red') // if eli ba3ed el i = crois , heart coler not red
+            // ki nsase5 star lkol bel crois yn9es somme me total
+            total.innerHTML = parseFloat(total.innerHTML) - (i.parentElement.parentElement.querySelector('.nombre').innerHTML * parseFloat(i.parentElement.parentElement.querySelector('.prix').innerHTML)) + ' €'
             i.parentElement.parentElement.remove()      // supprimer parentelement = row product
     })
 }
@@ -33,7 +35,7 @@ for (let i of plus) {                          // boucle pour parcourir tableau 
     i.addEventListener('click', function () {  // creation d'un event click sur btn plus === plus[i]
         i.nextElementSibling.innerHTML++       // selection le elemnt p nxt (plus) & acside a la valeur de p par innerhtml & ajoote + 1 OU bien i.previousElementSibling.innerHTML = Number(i.previousElementSibling.innerHTML) - 1
         //**i.parentElement.nextElementSibling.querySelector('.prix')**// OU b1 //***  i.parentElement.nextElementSibling.children[0].innerHTML  ***//       
-        total.innerHTML = (parseFloat(total.innerHTML) + parseFloat(i.parentElement.nextElementSibling.querySelector('.prix').innerHTML)) + ' €' 
+        total.innerHTML = (parseFloat(total.innerHTML) + parseFloat(i.parentElement.nextElementSibling.querySelector('.prix').innerHTML)) + ' €'
     })
 }
 
@@ -41,10 +43,10 @@ for (let i of moins) {                              // boucle pour parcourir tab
     i.addEventListener('click', function () {       // creation d'un event click sur btn plus === moins[i]
         if (i.previousElementSibling.innerHTML > 0) // condetoin sur la valeur de p > 0
             i.previousElementSibling.innerHTML--    // selection le elemnt p previous (moins) & acside a la valeur de p par innerhtml & enlever - 1
-            
-            total.innerHTML = (parseFloat(total.innerHTML) - parseFloat(i.parentElement.nextElementSibling.querySelector('.prix').innerHTML)) + ' €'
-            if(parseFloat(total.innerHTML) <= 0){
-                total.innerHTML = 0 + ' €'
-            }
+
+        total.innerHTML = (parseFloat(total.innerHTML) - parseFloat(i.parentElement.nextElementSibling.querySelector('.prix').innerHTML)) + ' €'
+        if (parseFloat(total.innerHTML) <= 0) {
+            total.innerHTML = 0 + ' €'
+        }
     })
 }
