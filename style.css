@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    background-color:  #dbdbdb !important;
+}
+.shopping-title {
+    color: green !important;
+}
+.background{
+    background: none !important;
+    border: none !important;
+}
+.total{
+    color: white;
+    margin-left: 20px;
+}
+.container{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+.row{
+    border-bottom: solid 2px #dbdbdb;
+}
+.bor{
+    border: none;
+    padding-right: 0px!important;
+    padding-left: 0!important;
+}
+p{
+    margin: 0!important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+h6{
+    margin-bottom: 0!important;
+}
+.product{
+    display: flex;
+    align-items: center;
+}
+.quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.favori{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-times{
+    padding-right: 20px;
+}
+i {
+    cursor: pointer;
+}
